@@ -2,7 +2,7 @@ name: giga
 
 on:
   schedule:
-    - cron: "*/6 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -99,12 +99,3 @@ jobs:
     - name: Run python hi.py
       run: |
         python hi.py --brave --incognito --do-not-track --xvfb --screenshot
-
-    # ---------------------------------------------------------
-    # Upload Screenshots
-    # ---------------------------------------------------------
-    - name: Upload screenshots
-      uses: actions/upload-artifact@v4
-      with:
-        name: seleniumbase-screenshots
-        path: ./latest_logs/
